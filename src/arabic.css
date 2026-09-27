@@ -1,0 +1,33 @@
+html { direction: rtl; }
+body { font-family: Tahoma, "Segoe UI", Arial, sans-serif; }
+button, a { font-family: inherit; }
+.brand { letter-spacing: 0; }
+.brand-light { letter-spacing: .4px; }
+.eyebrow, .status, .game-count, .outline-tag, .tag, .art-label { letter-spacing: .2px; }
+h1 { letter-spacing: -1.7px; line-height: 1.2; }
+h2, h3, .screen-title, .question-title { letter-spacing: -.6px; }
+.hero-copy > p { max-width: 450px; }
+.game-card, .year-card, .level-card, .option { text-align: right; }
+.game-art { border-right: 0; border-left: 1px solid #d8e7ef; }
+.game-info { flex: 1; }
+.game-meta { flex-wrap: wrap; row-gap: 6px; }
+.card-number { right: auto; left: 26px; }
+.outline-tag { margin-left: 0; margin-right: auto; }
+.selection-dot { right: auto; left: 13px; }
+.option-check { margin-left: 0; margin-right: auto; }
+.option > span:first-child { flex-shrink: 0; }
+.primary svg, .play-link svg { transform: scaleX(-1); }
+.result-actions .primary svg { transform: none; }
+.result-dialog { font-family: inherit; }
+.score-ring strong { direction: ltr; }
+.answer-review { text-align: right; }
+.question-title { line-height: 1.6; }
+.mini-code { font-family: inherit; }
+.round-badge, .step-footer, .quiz-progress { font-family: inherit; }
+
+@media (max-width: 580px) {
+  .game-art { border-left: 0; border-bottom: 1px solid #d8e7ef; }
+  .hero h1 { font-size: 46px; }
+  .screen-title { font-size: 33px; }
+  .question-title { font-size: 23px; }
+}

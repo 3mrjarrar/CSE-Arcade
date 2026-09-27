@@ -10,6 +10,7 @@ test('All 15 combinations provide five unique, answerable questions', () => {
       assert.equal(new Set(q.options).size, 4);
       assert.ok(q.options.includes(q.correct));
       assert.ok(!prompts.has(q.prompt));
+      assert.match(q.prompt, /[\u0600-\u06FF]/);
       prompts.add(q.prompt);
     }
   }
