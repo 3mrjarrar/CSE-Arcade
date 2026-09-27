@@ -1,0 +1,145 @@
+:root {
+  color: #142c47;
+  background: #fff;
+  color-scheme: light;
+}
+
+body {
+  background:
+    radial-gradient(circle at 87% 12%, #dcf7ff 0, transparent 26%),
+    radial-gradient(circle at 3% 57%, #fff4d9 0, transparent 22%),
+    #fff;
+}
+
+::selection { background: #b6edff; color: #142c47; }
+.header, footer { border-color: #dbe8f0; }
+.brand-light { color: #4d6680; }
+.nav-active, nav button:hover { color: #087ab3; }
+.status { color: #48637a; }
+.status i, .tag i { background: #17b9c9; }
+.eyebrow { color: #44738e; }
+.tiny-line { background: #00bfd3; }
+h1 em { color: #168fc4; }
+.hero-copy > p, .subtitle { color: #536b81; }
+.hero-notes { color: #526d80; }
+.hero-notes span:first-child svg { color: #ef8a2f; }
+.hero-notes span:last-child svg { color: #099eaa; }
+.primary {
+  background: #127db9;
+  border-color: #127db9;
+  color: #fff;
+  box-shadow: 0 8px 18px #127db925;
+}
+.primary:hover:not(:disabled) { background: #0b6196; }
+.hero-art {
+  background:
+    radial-gradient(circle at 47% 45%, #d7f9ff 0, #eafaff 34%, transparent 68%),
+    radial-gradient(circle at 77% 68%, #fff0bc 0, transparent 36%);
+}
+.hero-art > img { filter: drop-shadow(0 16px 20px #1d7eb52b); }
+.orbit { border-color: #7bcad349; }
+.orbit-two { border-color: #f7be5b8c; }
+.art-code { color: #4497b4; }
+.art-plus { color: #f5ad38; }
+.art-label {
+  background: #fff;
+  border-color: #cceaf1;
+  color: #366c82;
+  box-shadow: 0 7px 16px #0e6b8a12;
+}
+.art-label i { background: #16b4bd; }
+.section-heading h2 span, .screen-title > span { color: #ff9c28; }
+.game-count, .round-badge { color: #51758b; }
+.game-card {
+  background: #fff;
+  border-color: #d8e7ef;
+  box-shadow: 0 14px 35px #1b597d12;
+}
+.game-card:hover { border-color: #10a9d0; box-shadow: 0 18px 35px #1b83b224; }
+.game-art {
+  border-color: #d8e7ef;
+  background-image:
+    linear-gradient(#ffffff47 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff47 1px, transparent 1px),
+    linear-gradient(135deg, #63d6e9, #4299d9 58%, #675bd1);
+}
+.question-tile {
+  background: #fff;
+  border-color: #fff;
+  color: #137daf;
+  box-shadow: 8px 9px 0 #1e579446, 0 16px 28px #153c6652;
+}
+.mini-code, .art-corner { color: #fff; text-shadow: 0 1px 4px #1b589b; }
+.tag { color: #08869b; }
+.game-info p, .game-meta { color: #587185; }
+.game-meta span + span::before { color: #a3b9c7; }
+.play-link { color: #0a7eae; }
+.card-number { color: #e0edf2; }
+.coming-soon { color: #738a9b; }
+.plus-box { border-color: #f0b85c; color: #e99b24; background: #fff7e8; }
+.coming-soon strong { color: #304f65; }
+.coming-soon p, footer, footer > span:first-child { color: #668094; }
+.outline-tag { border-color: #f3d5a1; color: #9a721d; background: #fffaf0; }
+.footer-separator { color: #b2c1cb; }
+.back, .question-footer > span { color: #50718a; }
+.year-card, .level-card, .option {
+  border-color: #d8e7ef;
+  background: #fff;
+  box-shadow: 0 8px 21px #1b597d0a;
+}
+.year-card:hover, .level-card:hover, .option:hover { border-color: #4ab4d2; }
+.year-card.chosen, .level-card.chosen, .option.chosen {
+  border-color: #168fc4 !important;
+  background: #edfaff !important;
+  box-shadow: 0 8px 24px #13a6ce20;
+}
+.year-card:nth-child(1) { border-top: 4px solid #14b9c8; }
+.year-card:nth-child(2) { border-top: 4px solid #438fe1; }
+.year-card:nth-child(3) { border-top: 4px solid #8273dc; }
+.year-card:nth-child(4) { border-top: 4px solid #f0ac3c; }
+.year-card:nth-child(5) { border-top: 4px solid #ef7172; }
+.year-card:nth-child(1) .year-digit { color: #0a9eaa; }
+.year-card:nth-child(2) .year-digit { color: #307bcc; }
+.year-card:nth-child(3) .year-digit { color: #7060bf; }
+.year-card:nth-child(4) .year-digit { color: #c78414; }
+.year-card:nth-child(5) .year-digit { color: #d75a61; }
+.year-card > span:nth-of-type(2), .level-card p { color: #60788b; }
+.selection-dot { border-color: #a7bfcc; color: #148bb5; }
+.chosen .selection-dot { border-color: #148bb5; }
+.step-footer { color: #087fa7; }
+.muted { color: #688398; }
+.level-card:nth-child(1) { border-top: 4px solid #18b9a2; }
+.level-card:nth-child(2) { border-top: 4px solid #f0ab38; }
+.level-card:nth-child(3) { border-top: 4px solid #ee7475; }
+.bars i { background: #e3ecf0; }
+.bars i.lit { background: #159bc6; }
+.level-card:nth-child(2) .bars i.lit { background: #e9a02a; }
+.level-card:nth-child(3) .bars i.lit { background: #e96d73; }
+.quiz-progress { color: #53738a; }
+.quiz-progress i { background: #d9e9ef; }
+.quiz-progress .filled { background: #149fcb; }
+.option > span:first-child { border-color: #cddfe8; color: #31718f; background: #f5fbfe; }
+.option-check { color: #087faa; }
+.result-dialog {
+  background: #fff;
+  color: #142c47;
+  border-color: #b9dfe9;
+  box-shadow: 0 30px 90px #10395945;
+}
+.result-dialog::backdrop { background: #14314c80; }
+.score-ring {
+  background: #eafaff;
+  border-color: #16a9ce;
+  box-shadow: 0 0 0 9px #dff7fd;
+}
+.score-ring strong span, .score-ring > span { color: #426f85; }
+.result-dialog > p, .answer-review p { color: #5d7789; }
+.review-toggle { color: #087eb1; }
+.secondary { border-color: #bdd6e4; background: #f6fbfe; }
+.answer-review > div { border-color: #e0edf2; }
+.correct { color: #118978 !important; }
+.incorrect { color: #c8505a; }
+
+@media (max-width: 580px) {
+  .game-art { border-color: #d8e7ef; }
+}

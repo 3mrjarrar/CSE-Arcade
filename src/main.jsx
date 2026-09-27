@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createRound } from './questions';
 import './styles.css';
+import './theme.css';
 
 const years = ['Foundations', 'Building blocks', 'Systems & networks', 'Embedded & real-time', 'Engineering at scale'];
 const levels = ['beginner', 'intermediate', 'advanced'];
