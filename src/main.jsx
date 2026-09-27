@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createRound } from './questions';
+import SequenceGame from './SequenceGame';
 import './styles.css';
 import './theme.css';
 import './arabic.css';
+import './sequence.css';
 
 const years = ['البدايات الحلوة', 'الأساس صار أقوى', 'أنظمة وشبكات', 'أنظمة مدمجة ووقت حقيقي', 'هندسة على مستوى أكبر'];
 const levels = ['beginner', 'intermediate', 'advanced'];
@@ -87,15 +89,19 @@ function App() {
         </section>
 
         <section id="games" className="games">
-          <div className="section-heading"><div><span className="eyebrow">اختار تحدّيك</span><h2>زاوية الألعاب<span>.</span></h2></div><span className="game-count">لعبة واحدة وجاهزة إلك</span></div>
+          <div className="section-heading"><div><span className="eyebrow">اختار تحدّيك</span><h2>زاوية الألعاب<span>.</span></h2></div><span className="game-count">لعبتين وجاهزين إلك</span></div>
           <button className="game-card" onClick={() => setScreen('year')}>
             <div className="game-art"><div className="question-tile">؟<span>_</span></div><span className="mini-code">جاهز؟ يلا نلعب!</span><span className="art-corner">لعبة 01 / CSE</span></div>
             <div className="game-info"><span className="tag"><i/> تحدّي معلومات</span><h3>لعبة الأسئلة</h3><p>خمسة أسئلة على قدّ مستواك.<br/>جاوب، جرّب، وتذكّر: الغلطة كمان بتعلّم.</p><div className="game-meta"><span>٥ أسئلة</span><span>٥ سنوات</span><span>٣ مستويات</span></div><span className="play-link">يلا نبدأ <Icon/></span></div>
             <span className="card-number">01</span>
           </button>
+          <button className="game-card sequence-cover-card" onClick={() => setScreen('sequence')}>
+            <div className="game-art sequence-cover"><img src="/obada/cover.png" alt="عبادة محتار قدّام شاشة البوابة المعطّلة" loading="lazy"/></div>
+            <div className="game-info"><span className="tag"><i/> ترتيب وتسليك أمور</span><h3>لحّق عبادة يسجّل!</h3><p>البوابة معلّقة، والشُّعب ما بتستنّى.<br/>رتّب خطوات تشغيل النظام وأنقذ تسجيل عبادة.</p><div className="game-meta"><span>٧ خطوات</span><span>سحب وإفلات</span><span>عبادة معتمد عليك</span></div><span className="play-link">أنا قدّها <Icon/></span></div><span className="card-number">02</span>
+          </button>
           <div className="coming-soon"><span className="plus-box">+</span><div><strong>وفي ألعاب ثانية بالطريق.</strong><p>لسّه الأركيد بأول الطريق، زيّنا كلنا.</p></div><span className="outline-tag">خلّيك فضولي</span></div>
         </section>
-      </> : <section className="play-area">
+      </> : screen === 'sequence' ? <SequenceGame onHome={home}/> : <section className="play-area">
         <button className="back" onClick={() => screen === 'level' ? setScreen('year') : home()}><span aria-hidden="true">→</span> {screen === 'level' ? 'غيّر السنة' : 'ارجع للألعاب'}</button>
         <div className="play-topline"><span className="eyebrow">لعبة الأسئلة</span><span className="round-badge">{active ? `السنة ${year} / ${levelNames[level]}` : 'جهّز تحدّيك'}</span></div>
 
