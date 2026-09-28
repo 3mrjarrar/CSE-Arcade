@@ -83,18 +83,16 @@ function App() {
             <h1 ref={heading} tabIndex="-1">تعال و إختبر<br/><em>قدراتك هون</em></h1>
             <p>بين المحاضرات والكود والقهوة، في مكان نلعب فيه ونتعلّم سوا. جرّب معلوماتك، ويمكن تفاجئ حالك!</p>
             <a className="primary" href="#games">شوف التحدّي <Icon/></a>
-            <div className="hero-notes"><span><Icon type="bolt"/> جولات خفيفة</span><span><Icon type="code"/> لعقول هندسة الحاسوب</span></div>
           </div>
           <div className="hero-art">
             <div className="orbit orbit-one"/><div className="orbit orbit-two"/>
             <span className="art-code code-one">&lt;/&gt;</span><span className="art-code code-two">01</span><span className="art-plus">+</span>
             <img src="/logo.png" alt="شعار أركيد CSE بتنين وأذرع ألعاب"/>
-            <span className="art-label"><i/> يلا للمستوى الجاي</span>
           </div>
         </section>
 
         <section id="games" className="games">
-          <div className="section-heading"><div><span className="eyebrow">اختار تحدّيك</span><h2>زاوية الألعاب<span>.</span></h2></div><span className="game-count">لعبتين وجاهزين إلك</span></div>
+          <div className="section-heading"><div><span className="eyebrow">اختار تحدّيك</span><h2>زاوية الألعاب<span>.</span></h2></div></div>
           <button className="game-card" onClick={() => setScreen('year')}>
             <div className="game-art questions-cover"><img src="/questions-cover.png" alt="بطاقات أسئلة ملوّنة ومضيئة" loading="lazy"/></div>
             <div className="game-info"><span className="tag"><i/> تحدّي معلومات</span><h3>لعبة الأسئلة</h3><p>خمسة أسئلة على قدّ مستواك.<br/>جاوب، جرّب، وتذكّر: الغلطة كمان بتعلّم.</p><div className="game-meta"><span>٥ أسئلة</span><span>٥ سنوات</span><span>٣ مستويات</span></div><span className="play-link">يلا نبدأ <Icon/></span></div>
@@ -104,7 +102,7 @@ function App() {
             <div className="game-art sequence-cover"><img src="/obada/cover.png" alt="عبادة محتار قدّام شاشة البوابة المعطّلة" loading="lazy"/></div>
             <div className="game-info"><span className="tag"><i/> ترتيب وتسليك أمور</span><h3>لحّق عبادة يسجّل!</h3><p>البوابة معلّقة، والشُّعب ما بتستنّى.<br/>رتّب خطوات تشغيل النظام وأنقذ تسجيل عبادة.</p><div className="game-meta"><span>٧ خطوات</span><span>سحب وإفلات</span><span>عبادة معتمد عليك</span></div><span className="play-link">أنا قدّها <Icon/></span></div><span className="card-number">02</span>
           </button>
-          <div className="coming-soon"><span className="plus-box">+</span><div><strong>وفي ألعاب ثانية بالطريق.</strong><p>لسّه الأركيد بأول الطريق، زيّنا كلنا.</p></div><span className="outline-tag">خلّيك فضولي</span></div>
+          <div className="coming-soon"><span className="plus-box">+</span><div><strong>وفي ألعاب ثانية بالطريق.</strong><p>لسّه الأركيد بأول الطريق، زيّنا كلنا.</p></div></div>
         </section>
       </> : screen === 'sequence' ? <SequenceGame onHome={home}/> : <section className="play-area">
         <button className="back" onClick={() => screen === 'level' ? setScreen('year') : home()}><span aria-hidden="true">→</span> {screen === 'level' ? 'غيّر السنة' : 'ارجع للألعاب'}</button>
@@ -131,7 +129,7 @@ function App() {
       </section>}
     </main>
 
-    <footer><span>أركيد CSE <span className="footer-separator">/</span> العب. تعلّم. وكمّل.</span><span>للمهندسين اللي لسه بيبنوا طريقهم، سؤال ورا سؤال.</span></footer>
+    <footer>CSE Arcade</footer>
 
     {screen === 'result' && <dialog ref={dialog} className="result-dialog" onCancel={e => { e.preventDefault(); home(); }}>
       <span className="eyebrow">خلصت الجولة!</span>
