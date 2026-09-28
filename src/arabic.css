@@ -1,5 +1,5 @@
 html { direction: rtl; }
-body { font-family: Tahoma, "Segoe UI", Arial, sans-serif; }
+:root, body { font-family: Cairo, Tahoma, "Segoe UI", Arial, sans-serif; }
 button, a { font-family: inherit; }
 .brand { letter-spacing: 0; }
 .brand-light { letter-spacing: .4px; }
