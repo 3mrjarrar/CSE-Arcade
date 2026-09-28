@@ -85,7 +85,7 @@ function App() {
           <HeroCanvas/>
           <div className="hero-copy">
             <span className="eyebrow"><span className="tiny-line"/> شوية لعب، وكثير اكتشاف</span>
-            <h1 ref={heading} tabIndex="-1">إذا قدها تعال جرب</h1>
+            <h1 ref={heading} tabIndex="-1">إذا قدها<br/><em>تعال جرب</em></h1>
             <p>بين المحاضرات والكود والقهوة، في مكان نلعب فيه ونتعلّم سوا. جرّب معلوماتك، ويمكن تفاجئ حالك!</p>
             <a className="primary" href="#games">شوف التحدّي <Icon/></a>
           </div>
