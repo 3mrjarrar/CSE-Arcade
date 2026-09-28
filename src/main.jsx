@@ -113,7 +113,7 @@ function App() {
           </button>
           <button className="game-card logic-cover-card" onClick={() => setScreen('logic')}>
             <div className="game-art logic-cover"><span className="cover-signal">1</span><div className="cover-gates"><span>AND</span><span>NOT</span><span>OR</span></div><img src="/logo.png" alt="" loading="lazy"/></div>
-            <div className="game-info"><span className="tag"><i/> منطق ومسارات</span><h3>بوابات المنطق</h3><p>اختار مسار الإشارة بعناية.<br/>وصل قيمة 1 للشعار وخلّيه يضوي.</p><div className="game-meta"><span>٥ مراحل</span><span>AND / OR / NOT</span><span>بدون مؤقّت</span></div><span className="play-link">شغّل الدائرة <Icon/></span></div><span className="card-number">04</span>
+            <div className="game-info"><span className="tag"><i/> منطق ومسارات</span><h3>بوابات المنطق</h3><p>اختار مسار الإشارة بعناية.<br/>وصل قيمة 1 للشعار وخلّيه يضوي.</p><div className="game-meta"><span>٣ مراحل</span><span>AND / OR / NOT</span><span>بدون مؤقّت</span></div><span className="play-link">شغّل الدائرة <Icon/></span></div><span className="card-number">04</span>
           </button>
           <div className="coming-soon"><span className="plus-box">+</span><div><strong>وفي ألعاب ثانية بالطريق.</strong><p>لسّه الأركيد بأول الطريق، زيّنا كلنا.</p></div></div>
         </section>

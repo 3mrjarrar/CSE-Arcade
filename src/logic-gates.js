@@ -1,8 +1,6 @@
 export const LOGIC_LEVELS = [
   { start: 0, paths: [[['NOT'], ['OR', 0]], [['AND', 1], ['AND', 0]]] },
-  { start: 1, paths: [[['AND', 0], ['OR', 0]], [['NOT'], ['AND', 1]]] },
   { start: 0, paths: [[['OR', 0], ['NOT']], [['AND', 1], ['NOT']], [['AND', 0], ['OR', 0]]] },
-  { start: 1, paths: [[['AND', 0], ['OR', 0]], [['NOT'], ['AND', 1]], [['OR', 0], ['AND', 0]]] },
   { start: 0, paths: [[['NOT'], ['OR', 0]], [['AND', 1], ['NOT']], [['OR', 0], ['AND', 0]], [['AND', 1], ['NOT']]] },
 ];
 

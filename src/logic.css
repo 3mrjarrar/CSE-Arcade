@@ -5,60 +5,77 @@
 .logic-cover > img { width: 100px; height: 110px !important; object-fit: contain; filter: grayscale(1) brightness(.7) drop-shadow(0 0 16px #abf9ff); }
 .logic-cover-card .tag, .logic-cover-card .play-link { color: #6553a9; }
 
-.logic-page { padding: 30px 0 65px; }
-.logic-page .back { margin-bottom: 28px; }
+.logic-page { padding: 14px 0 18px; }
+.logic-page .back { margin-bottom: 9px; }
 .logic-heading { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
-.logic-heading h1 { font-size: clamp(30px, 4vw, 44px); margin: 12px 0; letter-spacing: -1px; }
+.logic-heading h1 { font-size: clamp(28px, 3.5vw, 39px); margin: 4px 0; letter-spacing: -1px; }
 .logic-heading h1 span { color: #7c5dcc; }
-.logic-heading p { color: #60788c; font-size: 13px; line-height: 1.8; margin: 0 0 25px; }
+.logic-heading p { color: #60788c; font-size: 12px; line-height: 1.6; margin: 0 0 10px; }
 .logic-heading p b { color: #148f73; }
 .logic-level { flex-shrink: 0; border: 1px solid #dcd1fb; background: #f6f1ff; color: #7659b5; border-radius: 20px; padding: 9px 13px; font-size: 11px; }
-.logic-board { display: flex; align-items: stretch; gap: 12px; padding: 25px 18px; border: 1px solid #dbe9ef; border-radius: 20px; background: radial-gradient(circle at 20% 10%, #e8f6ff, transparent 45%), radial-gradient(circle at 85% 80%, #f1eaff, transparent 45%), #fbfdff; overflow-x: auto; }
-.logic-endpoint { flex: 0 0 125px; min-height: 260px; border: 1px solid #cfe2ea; border-radius: 15px; background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; text-align: center; }
-.logic-endpoint > span, .logic-endpoint small { color: #668092; font-size: 11px; }
-.logic-source strong { display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%; background: #122d4b; color: #7df2d6; box-shadow: 0 0 0 7px #d7f9f0; font: 800 39px ui-monospace, monospace; }
-.logic-stage { position: relative; flex: 1 0 145px; min-width: 145px; display: flex; flex-direction: column; justify-content: center; gap: 15px; }
-.logic-stage::before { content: '←'; position: absolute; right: -14px; top: 50%; color: #6abacb; font-size: 20px; transform: translateY(-50%); z-index: 1; }
-.logic-stage-label { text-align: center; font-size: 11px; font-weight: 700; color: #7d91a1; }
-.logic-stage.active .logic-stage-label { color: #7257af; }
-.logic-options { display: grid; gap: 10px; }
-.logic-gate { min-height: 74px; padding: 10px; border: 1px solid #cddce9; border-radius: 11px; background: #fff; text-align: center; transition: transform .15s, border-color .15s, box-shadow .15s; }
-.logic-gate strong { display: block; color: #244869; font-size: 18px; }
-.logic-gate span { display: block; margin-top: 5px; color: #8295a4; font-size: 10px; }
-.logic-stage.active .logic-gate:not(:disabled):hover { border-color: #7960be; transform: translateY(-2px); box-shadow: 0 8px 18px #5f50a52b; }
-.logic-gate:disabled { opacity: .43; }
-.logic-gate.selected:disabled { opacity: 1; border-color: #40bc98; background: #e8fbf2; box-shadow: 0 0 0 2px #40bc9828; }
-.logic-gate.selected strong, .logic-gate.selected span { color: #147955; }
-.logic-logo img { display: block; width: 105px; height: 125px; object-fit: contain; filter: grayscale(1) brightness(.52); opacity: .55; transition: filter .35s, opacity .35s, transform .35s; }
-.logic-logo strong { color: #8295a4; font-size: 11px; }
-.logic-logo.lit { background: #ecfff6; border-color: #42c68d; box-shadow: 0 0 35px #39d48e70; }
-.logic-logo.lit img { filter: drop-shadow(0 0 14px #22d596); opacity: 1; transform: scale(1.07); }
-.logic-logo.lit strong { color: #168359; }
-.logic-status { min-height: 128px; margin-top: 20px; padding: 18px 20px; border: 1px solid #dce9ef; border-radius: 15px; background: #fff; text-align: center; color: #60788c; }
-.logic-status p { margin: 5px 0 10px; font-size: 13px; }
+
+.logic-maze { position: relative; width: 100%; height: clamp(250px, calc(100svh - 340px), 440px); border: 1px solid #d8e8ec; border-radius: 22px; overflow: hidden; background: radial-gradient(circle at 15% 15%, #dff3ff, transparent 32%), radial-gradient(circle at 85% 75%, #eee6ff, transparent 35%), radial-gradient(#a7bdc42d 1px, transparent 1px) 0 0 / 23px 23px, radial-gradient(ellipse, #fcfeff, #f6faff); box-shadow: inset 0 0 45px #bde6e21e; }
+.logic-maze::before { content: ''; position: absolute; inset: 18px; border: 1px dashed #b8dce44d; border-radius: 18px; pointer-events: none; }
+.maze-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.maze-route { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.maze-route.muted { stroke: #adc9d3; stroke-width: 2; stroke-dasharray: 4 8; opacity: .46; }
+.maze-route.available { stroke: #4aafc4; stroke-width: 2.5; stroke-dasharray: 8 7; opacity: .85; }
+.maze-route.traced { stroke: #18b985; stroke-width: 4; stroke-dasharray: 16 7; filter: drop-shadow(0 0 6px #18b98588); animation: maze-flow .9s linear infinite; }
+.maze-route.traced.failed { stroke: #dc7a6c; filter: drop-shadow(0 0 5px #dc7a6c88); }
+.maze-source, .maze-destination, .maze-gate { position: absolute; transform: translate(-50%, -50%); z-index: 1; }
+.maze-source { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 70px; height: 70px; border: 2px solid #3cc9a6; border-radius: 50%; background: #112f4a; color: #a2ffe0; box-shadow: 0 0 0 8px #8ee6ce35, 0 0 24px #3dd8b55e; }
+.maze-source span { color: #bde8df; font-size: 10px; }
+.maze-source strong { font: 800 27px ui-monospace, monospace; }
+.maze-gate { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 72px; height: 45px; padding: 4px; border: 1px solid #a9c8d5; border-radius: 10px; background: #fff; box-shadow: 0 6px 14px #194a5c22; text-align: center; transition: transform .18s, box-shadow .18s, background .18s; }
+.maze-gate strong { color: #26536b; font-size: 13px; }
+.maze-gate small { color: #7a99a5; font-size: 9px; margin-top: 2px; }
+.maze-gate:disabled { opacity: .55; }
+.maze-gate.available:not(:disabled) { border-color: #2bacbf; box-shadow: 0 0 0 4px #31bdc32c, 0 6px 14px #194a5c22; }
+.maze-gate.available:not(:disabled):hover { transform: translate(-50%, -50%) scale(1.08); background: #f1fcff; }
+.maze-gate.selected:disabled { opacity: 1; border-color: #1aba89; background: #e6fff3; box-shadow: 0 0 0 4px #30c68b3a, 0 0 18px #27bb8891; }
+.maze-gate.selected strong, .maze-gate.selected small { color: #08744f; }
+.maze-destination { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 82px; height: 80px; border: 1px solid #cbdde2; border-radius: 16px; background: #fffffff2; box-shadow: 0 7px 18px #194a5c20; }
+.maze-destination span, .maze-destination small { color: #6e8a99; font-size: 10px; }
+.maze-destination img { width: 57px; height: 54px; object-fit: contain; filter: grayscale(1) brightness(.55); opacity: .48; transition: filter .3s, opacity .3s, transform .3s; }
+.maze-destination.lit { background: #e9fff3; border-color: #19bf83; box-shadow: 0 0 0 6px #50d99c46, 0 0 32px #23c98591; }
+.maze-destination.lit img { filter: drop-shadow(0 0 10px #16ce92); opacity: 1; transform: scale(1.08); }
+.maze-destination.lit small { color: #15815a; font-weight: 700; }
+@keyframes maze-flow { to { stroke-dashoffset: -23; } }
+@media (prefers-reduced-motion: reduce) { .maze-route.traced { animation: none; } }
+
+.logic-status { min-height: 50px; margin-top: 8px; padding: 8px 12px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 16px; border: 1px solid #dce9ef; border-radius: 12px; background: #fff; text-align: center; color: #60788c; }
+.logic-status p { margin: 0; font-size: 12px; }
 .logic-status p b { color: #254a65; font: 700 15px ui-monospace, monospace; }
 .logic-status p strong { color: #168e69; }
-.logic-status h2 { margin: 12px 0 16px; font-size: 22px; }
+.logic-status h2 { margin: 0; font-size: 17px; }
 .logic-status .primary { background: #7a61c3; border-color: #7a61c3; color: white; }
 .logic-status .primary:hover { background: #654cad; }
+.logic-status .primary { padding: 9px 14px; }
+
+.logic-finale { min-height: calc(100svh - 150px); display: grid; place-items: center; padding: 20px 0; }
+.logic-finale-card { width: min(100%, 680px); padding: clamp(24px, 5vw, 42px); border: 1px solid #a9e9cb; border-radius: 26px; background: radial-gradient(circle at 50% 35%, #d9fff0, transparent 54%), linear-gradient(145deg, #f4fffa, #fff); box-shadow: 0 18px 55px #159e6b20; text-align: center; }
+.logic-finale-card img { display: block; width: min(240px, 52vw); height: min(260px, 32svh); object-fit: contain; margin: 8px auto; filter: drop-shadow(0 0 18px #34efae) drop-shadow(0 0 35px #21c88a88); animation: logic-glow 2.2s ease-in-out infinite alternate; }
+.logic-finale-card h1 { margin: 12px 0 22px; color: #107d57; font-size: clamp(26px, 4vw, 42px); }
+.logic-finale-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.logic-finale-actions button { padding: 12px 20px; border-radius: 10px; font: inherit; font-weight: 700; cursor: pointer; }
+.logic-finale-actions .primary { background: #12a774; border: 1px solid #12a774; color: white; }
+.logic-finale-actions .secondary { background: white; border: 1px solid #63cdaa; color: #087a57; }
+@keyframes logic-glow { to { filter: drop-shadow(0 0 28px #23f4aa) drop-shadow(0 0 55px #22d897); transform: scale(1.03); } }
+@media (prefers-reduced-motion: reduce) { .logic-finale-card img { animation: none; } }
 
 @media (max-width: 720px) {
   .logic-heading { align-items: start; }
-  .logic-heading h1 { font-size: 31px; }
+  .logic-heading h1 { font-size: 28px; }
   .logic-heading p { font-size: 12px; }
-  .logic-board { flex-direction: column; overflow: visible; }
-  .logic-endpoint { flex: auto; min-height: 110px; gap: 4px; }
-  .logic-source strong { width: 42px; height: 42px; font-size: 24px; box-shadow: 0 0 0 4px #d7f9f0; }
-  .logic-stage { min-height: 132px; flex: auto; gap: 7px; }
-  .logic-stage::before { content: '↓'; right: 50%; top: -22px; transform: translateX(50%); }
-  .logic-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .logic-gate { min-height: 75px; }
-  .logic-logo { min-height: 150px; }
-  .logic-logo img { width: 75px; height: 90px; }
+  .logic-maze { max-width: 520px; height: clamp(290px, calc(100svh - 350px), 430px); margin: 0 auto; }
+  .maze-source { width: 58px; height: 58px; }
+  .maze-source strong { font-size: 24px; }
+  .maze-gate { width: 69px; height: 43px; }
+  .maze-destination { width: 65px; height: 58px; }
+  .maze-destination img { width: 44px; height: 37px; }
+  .logic-status h2 { font-size: 15px; }
 }
 @media (max-width: 580px) {
-  .logic-page { padding-top: 25px; }
+  .logic-page { padding-top: 12px; }
   .logic-level { font-size: 10px; padding: 7px; }
-  .logic-board { padding: 20px 12px; }
-  .logic-status h2 { font-size: 18px; }
 }
