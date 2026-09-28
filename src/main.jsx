@@ -70,8 +70,8 @@ function App() {
   const active = screen === 'quiz' || screen === 'result';
   return <div className={`app-shell ${screen === 'home' ? 'home-shell' : ''}`}>
     <header className="header">
-      <button className="brand" onClick={home} aria-label="الصفحة الرئيسية لأركيد CSE">
-        <img src="/logo.png" alt=""/><span>أركيد <span className="brand-light" dir="ltr">CSE</span></span>
+      <button className="brand" onClick={home} aria-label="CSE Arcade home">
+        <img src="/logo.png" alt=""/><span dir="ltr">CSE <span className="brand-light">Arcade</span></span>
       </button>
       <nav aria-label="التنقل الرئيسي">
         <button className={screen === 'home' ? 'nav-active' : ''} onClick={home}><Icon type="grid"/>الألعاب</button>
@@ -92,7 +92,7 @@ function App() {
           <div className="hero-art">
             <div className="orbit orbit-one"/><div className="orbit orbit-two"/>
             <span className="art-code code-one">&lt;/&gt;</span><span className="art-code code-two">01</span><span className="art-plus">+</span>
-            <img src="/logo.png" alt="شعار أركيد CSE بتنين وأذرع ألعاب"/>
+            <img src="/logo.png" alt="شعار CSE Arcade بتنين وأذرع ألعاب"/>
           </div>
         </section>
 
