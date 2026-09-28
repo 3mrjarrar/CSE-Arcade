@@ -1,0 +1,27 @@
+.questions-cover {
+  min-height: 300px;
+  overflow: hidden;
+  background: #57321e;
+}
+
+.questions-cover::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: url('/questions-cover.png') center / cover;
+  filter: blur(18px);
+  opacity: .55;
+}
+
+.questions-cover img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 22px #23100977);
+}
+
+@media (max-width: 580px) {
+  .questions-cover { min-height: 290px; }
+  .questions-cover img { height: 290px; }
+}

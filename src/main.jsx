@@ -8,6 +8,8 @@ import './theme.css';
 import './arabic.css';
 import './sequence.css';
 import './hero-canvas.css';
+import './questions-cover.css';
+import './games-grid.css';
 
 const years = ['البدايات الحلوة', 'الأساس صار أقوى', 'أنظمة وشبكات', 'أنظمة مدمجة ووقت حقيقي', 'هندسة على مستوى أكبر'];
 const levels = ['beginner', 'intermediate', 'advanced'];
@@ -94,7 +96,7 @@ function App() {
         <section id="games" className="games">
           <div className="section-heading"><div><span className="eyebrow">اختار تحدّيك</span><h2>زاوية الألعاب<span>.</span></h2></div><span className="game-count">لعبتين وجاهزين إلك</span></div>
           <button className="game-card" onClick={() => setScreen('year')}>
-            <div className="game-art"><div className="question-tile">؟<span>_</span></div><span className="mini-code">جاهز؟ يلا نلعب!</span><span className="art-corner">لعبة 01 / CSE</span></div>
+            <div className="game-art questions-cover"><img src="/questions-cover.png" alt="بطاقات أسئلة ملوّنة ومضيئة" loading="lazy"/></div>
             <div className="game-info"><span className="tag"><i/> تحدّي معلومات</span><h3>لعبة الأسئلة</h3><p>خمسة أسئلة على قدّ مستواك.<br/>جاوب، جرّب، وتذكّر: الغلطة كمان بتعلّم.</p><div className="game-meta"><span>٥ أسئلة</span><span>٥ سنوات</span><span>٣ مستويات</span></div><span className="play-link">يلا نبدأ <Icon/></span></div>
             <span className="card-number">01</span>
           </button>
