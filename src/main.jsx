@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createRound } from './questions';
 import SequenceGame from './SequenceGame';
+import ElevatorGame from './ElevatorGame';
 import HeroCanvas from './HeroCanvas';
 import './styles.css';
 import './theme.css';
@@ -10,6 +11,7 @@ import './sequence.css';
 import './hero-canvas.css';
 import './questions-cover.css';
 import './games-grid.css';
+import './elevator.css';
 
 const years = ['البدايات الحلوة', 'الأساس صار أقوى', 'أنظمة وشبكات', 'أنظمة مدمجة ووقت حقيقي', 'هندسة على مستوى أكبر'];
 const levels = ['beginner', 'intermediate', 'advanced'];
@@ -42,6 +44,7 @@ function App() {
   const score = answers.filter((answer, i) => answer === round[i]?.correct).length;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (screen === 'result') dialog.current?.showModal();
     else heading.current?.focus();
   }, [screen]);
@@ -102,9 +105,13 @@ function App() {
             <div className="game-art sequence-cover"><img src="/obada/cover.png" alt="عبادة محتار قدّام شاشة البوابة المعطّلة" loading="lazy"/></div>
             <div className="game-info"><span className="tag"><i/> ترتيب وتسليك أمور</span><h3>لحّق عبادة يسجّل!</h3><p>البوابة معلّقة، والشُّعب ما بتستنّى.<br/>رتّب خطوات تشغيل النظام وأنقذ تسجيل عبادة.</p><div className="game-meta"><span>٧ خطوات</span><span>سحب وإفلات</span><span>عبادة معتمد عليك</span></div><span className="play-link">أنا قدّها <Icon/></span></div><span className="card-number">02</span>
           </button>
+          <button className="game-card elevator-cover-card" onClick={() => setScreen('elevator')}>
+            <div className="game-art elevator-cover"><img src="/elevator/cover.jpg" alt="مصعد مفتوح وإشارته بتدلّ على الطابق الخامس" loading="lazy"/></div>
+            <div className="game-info"><span className="tag"><i/> ثنائي وعشري</span><h3>المصعد الثنائي</h3><p>المختبر بالطابق الخامس.<br/>حلّ التحويلات واطلع قبل ما يخلص الوقت.</p><div className="game-meta"><span>٥ طوابق</span><span>٢٠ ثانية</span><span>ثنائي ↔ عشري</span></div><span className="play-link">يلا نطلع <Icon/></span></div><span className="card-number">03</span>
+          </button>
           <div className="coming-soon"><span className="plus-box">+</span><div><strong>وفي ألعاب ثانية بالطريق.</strong><p>لسّه الأركيد بأول الطريق، زيّنا كلنا.</p></div></div>
         </section>
-      </> : screen === 'sequence' ? <SequenceGame onHome={home}/> : <section className="play-area">
+      </> : screen === 'sequence' ? <SequenceGame onHome={home}/> : screen === 'elevator' ? <ElevatorGame onHome={home}/> : <section className="play-area">
         <button className="back" onClick={() => screen === 'level' ? setScreen('year') : home()}><span aria-hidden="true">→</span> {screen === 'level' ? 'غيّر السنة' : 'ارجع للألعاب'}</button>
         <div className="play-topline"><span className="eyebrow">لعبة الأسئلة</span><span className="round-badge">{active ? `السنة ${year} / ${levelNames[level]}` : 'جهّز تحدّيك'}</span></div>
 

@@ -1,0 +1,88 @@
+.elevator-cover {
+  overflow: hidden;
+  background: #d3b397;
+}
+.elevator-cover::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: url('/elevator/cover.jpg') center / cover;
+  filter: blur(17px);
+  opacity: .55;
+}
+.elevator-cover img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.elevator-cover-card .tag,
+.elevator-cover-card .play-link { color: #a5692a; }
+
+.elevator-page { padding: 30px 0 65px; }
+.elevator-page .back { margin-bottom: 25px; }
+.elevator-heading { display: flex; justify-content: space-between; align-items: center; gap: 25px; max-width: 1100px; margin: auto; }
+.elevator-heading h1 { font-size: clamp(30px, 4vw, 44px); letter-spacing: -1px; margin: 12px 0; }
+.elevator-heading h1 span { color: #d58a38; }
+.elevator-heading p { margin: 0 0 15px; color: #5d7282; font-size: 13px; line-height: 1.8; }
+.elevator-timer { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; padding: 12px 18px; border: 1px solid #b9e6ce; background: #effcf5; border-radius: 14px; color: #20764d; }
+.elevator-timer strong { font: 700 26px ui-monospace, Consolas, monospace; }
+.elevator-timer span { font-size: 10px; }
+.elevator-timer.urgent { background: #fff0eb; border-color: #f7c3b4; color: #bf4d36; }
+.elevator-time-track { max-width: 1100px; height: 6px; margin: 0 auto 24px; border-radius: 9px; overflow: hidden; background: #e5ecf0; direction: ltr; }
+.elevator-time-track span { display: block; height: 100%; background: linear-gradient(90deg, #29bdad, #53c477); transition: width .1s linear; }
+.elevator-layout { display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 1fr); align-items: center; gap: clamp(22px, 4vw, 55px); max-width: 1100px; margin: auto; }
+.elevator-scene { position: relative; width: 100%; max-width: 460px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px #62492d25; background: #ddbf9e; }
+.elevator-scene img { display: block; width: 100%; height: auto; }
+.elevator-floor-number { position: absolute; top: 11.3%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; width: 25%; height: 7%; border-radius: 4px; background: #1b2025; text-align: center; color: #83ff91; text-shadow: 0 0 9px #27ee63, 0 0 2px #0b300d; font: 800 clamp(14px, 2.2vw, 26px) ui-monospace, Consolas, monospace; direction: ltr; }
+.elevator-floor-number.stopped { color: #ff716b; text-shadow: 0 0 8px #ff524c; }
+.elevator-cabin-display { position: absolute; top: 41.7%; left: 50%; transform: translate(-50%, -50%); width: 12.4%; height: 4.6%; display: grid; place-items: center; border-radius: 3px; background: #1b2222; color: #b4fd79; text-shadow: 0 0 6px #a2ed53; font: 700 clamp(9px, 1.35vw, 16px) ui-monospace, Consolas, monospace; letter-spacing: 1px; overflow: hidden; }
+.elevator-control { min-width: 0; border: 1px solid #dce8ec; border-radius: 20px; padding: clamp(23px, 3vw, 36px); background: #fff; box-shadow: 0 13px 35px #2b52600c; }
+.elevator-progress { display: flex; justify-content: space-between; gap: 15px; color: #607989; font-size: 12px; }
+.elevator-progress b { color: #147f80; }
+.elevator-dots { display: flex; gap: 7px; margin: 14px 0 35px; }
+.elevator-dots span { height: 7px; flex: 1; border-radius: 5px; background: #e6ecee; }
+.elevator-dots span.reached { background: #3bbc85; }
+.elevator-question-type { display: inline-block; padding: 7px 11px; border-radius: 30px; color: #a5692a; background: #fff4e8; font-size: 11px; }
+.elevator-control h2 { margin: 18px 0 7px; font-size: clamp(22px, 2.5vw, 30px); line-height: 1.5; letter-spacing: -.6px; }
+.elevator-hint { margin: 0 0 30px; color: #8296a2; font-size: 12px; }
+.elevator-answer-form label { display: block; margin-bottom: 10px; color: #415c6c; font-size: 13px; font-weight: 700; }
+.elevator-answer-row { display: flex; gap: 10px; }
+.elevator-answer-row input { min-width: 0; flex: 1; width: 100%; padding: 12px 15px; border: 1px solid #bed4de; border-radius: 8px; outline: none; color: #153749; background: #f7fbfd; text-align: center; font: 700 22px ui-monospace, Consolas, monospace; letter-spacing: 3px; }
+.elevator-answer-row input:focus { border-color: #19a4bb; box-shadow: 0 0 0 3px #19a4bb22; }
+.elevator-answer-row input::placeholder { color: #aabcc5; }
+.elevator-answer-row .primary { min-width: 100px; gap: 0; }
+.elevator-answer-form small { display: block; margin-top: 9px; color: #8296a2; font-size: 11px; }
+.elevator-feedback { min-height: 25px; margin: 27px 0 0; color: #6a8190; font-size: 13px; }
+.elevator-feedback.wrong { color: #c04749; font-weight: 700; }
+.elevator-feedback.right { color: #188355; font-weight: 700; }
+.elevator-result { text-align: center; padding: 15px 5px; }
+.elevator-result-icon { display: grid; place-items: center; width: 66px; height: 66px; margin: 0 auto 14px; border-radius: 50%; background: #e3faeb; color: #188b4f; font-size: 36px; }
+.elevator-result.won { color: #177845; }
+.elevator-result.lost .elevator-result-icon { background: #fff0e8; color: #b16639; }
+.elevator-result.lost { color: #9a562e; }
+.elevator-result h2 { font-size: clamp(27px, 3vw, 36px); margin: 0 0 15px; }
+.elevator-result p { font-size: 17px; line-height: 1.8; margin: 0 auto 30px; max-width: 440px; }
+.elevator-result-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.elevator-result-actions .secondary { padding-inline: 18px; }
+
+@media (max-width: 760px) {
+  .elevator-layout { display: flex; flex-direction: column-reverse; gap: 20px; }
+  .elevator-control { width: 100%; }
+  .elevator-scene { width: min(100%, 320px); }
+  .elevator-floor-number { font-size: 18px; }
+  .elevator-cabin-display { font-size: 11px; }
+}
+@media (max-width: 580px) {
+  .elevator-page { padding-top: 25px; }
+  .elevator-heading { align-items: flex-start; gap: 12px; }
+  .elevator-heading h1 { font-size: 29px; }
+  .elevator-heading p { font-size: 11px; }
+  .elevator-timer { padding: 9px 10px; }
+  .elevator-timer strong { font-size: 17px; }
+  .elevator-control { padding: 22px 18px; }
+  .elevator-progress { font-size: 10px; }
+  .elevator-control h2 { font-size: 23px; }
+  .elevator-answer-row .primary { min-width: 83px; padding-inline: 10px; }
+  .elevator-result-actions { flex-direction: column; }
+}
