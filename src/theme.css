@@ -79,6 +79,7 @@ h1 em { color: #168fc4; }
 .plus-box { border-color: #f0b85c; color: #e99b24; background: #fff7e8; }
 .coming-soon strong { color: #304f65; }
 .coming-soon p, footer, footer > span:first-child { color: #668094; }
+footer { justify-content: center; text-align: center; }
 .outline-tag { border-color: #f3d5a1; color: #9a721d; background: #fffaf0; }
 .footer-separator { color: #b2c1cb; }
 .back, .question-footer > span { color: #50718a; }
