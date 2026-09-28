@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createRound } from './questions';
 import SequenceGame from './SequenceGame';
+import HeroCanvas from './HeroCanvas';
 import './styles.css';
 import './theme.css';
 import './arabic.css';
 import './sequence.css';
+import './hero-canvas.css';
 
 const years = ['البدايات الحلوة', 'الأساس صار أقوى', 'أنظمة وشبكات', 'أنظمة مدمجة ووقت حقيقي', 'هندسة على مستوى أكبر'];
 const levels = ['beginner', 'intermediate', 'advanced'];
@@ -59,7 +61,7 @@ function App() {
   }
 
   const active = screen === 'quiz' || screen === 'result';
-  return <div className="app-shell">
+  return <div className={`app-shell ${screen === 'home' ? 'home-shell' : ''}`}>
     <header className="header">
       <button className="brand" onClick={home} aria-label="الصفحة الرئيسية لأركيد CSE">
         <img src="/logo.png" alt=""/><span>أركيد <span className="brand-light" dir="ltr">CSE</span></span>
@@ -73,9 +75,10 @@ function App() {
     <main>
       {screen === 'home' ? <>
         <section className="hero">
+          <HeroCanvas/>
           <div className="hero-copy">
             <span className="eyebrow"><span className="tiny-line"/> شوية لعب، وكثير اكتشاف</span>
-            <h1 ref={heading} tabIndex="-1">مستواك الجاي<br/>بيبدأ <em>من هون.</em></h1>
+            <h1 ref={heading} tabIndex="-1">تعال و إختبر<br/><em>قدراتك هون</em></h1>
             <p>بين المحاضرات والكود والقهوة، في مكان نلعب فيه ونتعلّم سوا. جرّب معلوماتك، ويمكن تفاجئ حالك!</p>
             <a className="primary" href="#games">شوف التحدّي <Icon/></a>
             <div className="hero-notes"><span><Icon type="bolt"/> جولات خفيفة</span><span><Icon type="code"/> لعقول هندسة الحاسوب</span></div>

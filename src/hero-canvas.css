@@ -1,0 +1,37 @@
+.home-shell.app-shell { max-width: none; padding: 0; }
+.home-shell > .header, .home-shell > footer {
+  width: calc(100% - 96px);
+  max-width: 1160px;
+  margin-inline: auto;
+}
+.home-shell .games { max-width: 1256px; margin-inline: auto; padding: 38px 48px 52px; }
+.home-shell .hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  min-height: calc(100svh - 100px);
+  margin: 0;
+  padding: 30px max(48px, calc((100% - 1160px) / 2));
+  border-radius: 0;
+  background: #fafdff;
+  overflow: hidden;
+}
+@media (max-width: 850px) {
+  .home-shell > .header, .home-shell > footer { width: calc(100% - 56px); }
+  .home-shell .hero { padding-inline: 28px; }
+  .home-shell .games { padding-inline: 28px; }
+}
+.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.hero-copy { position: relative; z-index: 1; }
+.hero-copy h1 { font-size: clamp(40px, 4.7vw, 65px); text-shadow: 0 2px 22px #ffffffb3; }
+.hero-copy > p { color: #344f66; text-shadow: 0 1px 10px #fff; }
+.hero .hero-art { background: transparent; }
+.hero .orbit { border-color: #70bed343; }
+.hero .orbit-two { border-color: #b991df55; }
+@media (max-width: 580px) {
+  .home-shell > .header, .home-shell > footer { width: calc(100% - 40px); }
+  .home-shell .hero { min-height: calc(100svh - 78px); padding: 30px 20px 10px; }
+  .home-shell .games { padding-inline: 20px; }
+  .hero-copy h1 { font-size: 43px; }
+}
