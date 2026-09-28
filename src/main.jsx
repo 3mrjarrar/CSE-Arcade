@@ -105,7 +105,7 @@ function App() {
           </button>
           <button className="game-card sequence-cover-card" onClick={() => setScreen('sequence')}>
             <div className="game-art sequence-cover"><img src="/obada/cover.png" alt="عبادة محتار قدّام شاشة البوابة المعطّلة" loading="lazy"/></div>
-            <div className="game-info"><span className="tag"><i/> ترتيب وتسليك أمور</span><h3>لحّق عبادة يسجّل!</h3><p>البوابة معلّقة، والشُّعب ما بتستنّى.<br/>رتّب خطوات تشغيل النظام وأنقذ تسجيل عبادة.</p><div className="game-meta"><span>٧ خطوات</span><span>سحب وإفلات</span><span>عبادة معتمد عليك</span></div><span className="play-link">أنا قدّها <Icon/></span></div><span className="card-number">02</span>
+            <div className="game-info"><span className="tag"><i/> ترتيب وتسليك أمور</span><h3>ساعد عبادة!</h3><p>البوابة معلّقة، والشُّعب ما بتستنّى.<br/>رتّب خطوات تشغيل النظام وأنقذ تسجيل عبادة.</p><div className="game-meta"><span>٧ خطوات</span><span>سحب وإفلات</span><span>عبادة معتمد عليك</span></div><span className="play-link">أنا قدّها <Icon/></span></div><span className="card-number">02</span>
           </button>
           <button className="game-card elevator-cover-card" onClick={() => setScreen('elevator')}>
             <div className="game-art elevator-cover"><img src="/elevator/cover.jpg" alt="مصعد مفتوح وإشارته بتدلّ على الطابق الخامس" loading="lazy"/></div>

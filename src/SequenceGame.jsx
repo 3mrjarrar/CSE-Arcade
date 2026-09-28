@@ -103,7 +103,7 @@ export default function SequenceGame({ onHome }) {
 
   return <section className="sequence-page">
     <button className="back" onClick={onHome}>→ ارجع للألعاب</button>
-    <div className="sequence-heading"><div><span className="eyebrow">مهمّة إنقاذ التسجيل</span><h1 ref={title} tabIndex="-1">لحّق عبادة <em>يسجّل!</em></h1><p>البوابة معلّقة، وعبادة مستنّيك. رتّب خطوات تشغيل النظام من فوق لتحت، وبعدين جرّب تفتحها.</p></div><span className="portal-status"><i/> البوابة مشغولة</span></div>
+    <div className="sequence-heading"><div><span className="eyebrow">مهمّة إنقاذ التسجيل</span><h1 ref={title} tabIndex="-1">ساعد <em>عبادة!</em></h1><p>البوابة معلّقة، وعبادة مستنّيك. رتّب خطوات تشغيل النظام من فوق لتحت، وبعدين جرّب تفتحها.</p></div><span className="portal-status"><i/> البوابة مشغولة</span></div>
     <div className="sequence-workspace">
       <aside className="obada-companion"><div className="speech-bubble">يا رب تزبط, بدي اسجل قبل ما تسكر الشعب.</div><img src="/obada/begging.png" alt="عبادة بترجّى إن البوابة تفتح" draggable="false"/><span className="companion-caption">عبادة · طالب على أعصابه</span></aside>
       <section className={`sequence-bank ${hover === 'bank' ? 'drop-hover' : ''}`} data-drop="bank" aria-label="بطاقات الخطوات المبعثرة">
