@@ -1,0 +1,64 @@
+.logic-cover { gap: 13px; background: linear-gradient(140deg, #172d57, #4a3490 58%, #178ca6); }
+.logic-cover .cover-signal { display: grid; place-items: center; width: 54px; height: 54px; border: 2px solid #6df3cb; border-radius: 50%; color: #6df3cb; font: 800 28px ui-monospace, monospace; box-shadow: 0 0 25px #40dfb078; }
+.logic-cover .cover-gates { display: grid; gap: 9px; }
+.logic-cover .cover-gates span { padding: 8px 12px; border: 1px solid #9dd6ff; border-radius: 8px; color: #eafaff; background: #b7d9ff25; font: 700 13px ui-monospace, monospace; }
+.logic-cover > img { width: 100px; height: 110px !important; object-fit: contain; filter: grayscale(1) brightness(.7) drop-shadow(0 0 16px #abf9ff); }
+.logic-cover-card .tag, .logic-cover-card .play-link { color: #6553a9; }
+
+.logic-page { padding: 30px 0 65px; }
+.logic-page .back { margin-bottom: 28px; }
+.logic-heading { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.logic-heading h1 { font-size: clamp(30px, 4vw, 44px); margin: 12px 0; letter-spacing: -1px; }
+.logic-heading h1 span { color: #7c5dcc; }
+.logic-heading p { color: #60788c; font-size: 13px; line-height: 1.8; margin: 0 0 25px; }
+.logic-heading p b { color: #148f73; }
+.logic-level { flex-shrink: 0; border: 1px solid #dcd1fb; background: #f6f1ff; color: #7659b5; border-radius: 20px; padding: 9px 13px; font-size: 11px; }
+.logic-board { display: flex; align-items: stretch; gap: 12px; padding: 25px 18px; border: 1px solid #dbe9ef; border-radius: 20px; background: radial-gradient(circle at 20% 10%, #e8f6ff, transparent 45%), radial-gradient(circle at 85% 80%, #f1eaff, transparent 45%), #fbfdff; overflow-x: auto; }
+.logic-endpoint { flex: 0 0 125px; min-height: 260px; border: 1px solid #cfe2ea; border-radius: 15px; background: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; text-align: center; }
+.logic-endpoint > span, .logic-endpoint small { color: #668092; font-size: 11px; }
+.logic-source strong { display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%; background: #122d4b; color: #7df2d6; box-shadow: 0 0 0 7px #d7f9f0; font: 800 39px ui-monospace, monospace; }
+.logic-stage { position: relative; flex: 1 0 145px; min-width: 145px; display: flex; flex-direction: column; justify-content: center; gap: 15px; }
+.logic-stage::before { content: '←'; position: absolute; right: -14px; top: 50%; color: #6abacb; font-size: 20px; transform: translateY(-50%); z-index: 1; }
+.logic-stage-label { text-align: center; font-size: 11px; font-weight: 700; color: #7d91a1; }
+.logic-stage.active .logic-stage-label { color: #7257af; }
+.logic-options { display: grid; gap: 10px; }
+.logic-gate { min-height: 74px; padding: 10px; border: 1px solid #cddce9; border-radius: 11px; background: #fff; text-align: center; transition: transform .15s, border-color .15s, box-shadow .15s; }
+.logic-gate strong { display: block; color: #244869; font-size: 18px; }
+.logic-gate span { display: block; margin-top: 5px; color: #8295a4; font-size: 10px; }
+.logic-stage.active .logic-gate:not(:disabled):hover { border-color: #7960be; transform: translateY(-2px); box-shadow: 0 8px 18px #5f50a52b; }
+.logic-gate:disabled { opacity: .43; }
+.logic-gate.selected:disabled { opacity: 1; border-color: #40bc98; background: #e8fbf2; box-shadow: 0 0 0 2px #40bc9828; }
+.logic-gate.selected strong, .logic-gate.selected span { color: #147955; }
+.logic-logo img { display: block; width: 105px; height: 125px; object-fit: contain; filter: grayscale(1) brightness(.52); opacity: .55; transition: filter .35s, opacity .35s, transform .35s; }
+.logic-logo strong { color: #8295a4; font-size: 11px; }
+.logic-logo.lit { background: #ecfff6; border-color: #42c68d; box-shadow: 0 0 35px #39d48e70; }
+.logic-logo.lit img { filter: drop-shadow(0 0 14px #22d596); opacity: 1; transform: scale(1.07); }
+.logic-logo.lit strong { color: #168359; }
+.logic-status { min-height: 128px; margin-top: 20px; padding: 18px 20px; border: 1px solid #dce9ef; border-radius: 15px; background: #fff; text-align: center; color: #60788c; }
+.logic-status p { margin: 5px 0 10px; font-size: 13px; }
+.logic-status p b { color: #254a65; font: 700 15px ui-monospace, monospace; }
+.logic-status p strong { color: #168e69; }
+.logic-status h2 { margin: 12px 0 16px; font-size: 22px; }
+.logic-status .primary { background: #7a61c3; border-color: #7a61c3; color: white; }
+.logic-status .primary:hover { background: #654cad; }
+
+@media (max-width: 720px) {
+  .logic-heading { align-items: start; }
+  .logic-heading h1 { font-size: 31px; }
+  .logic-heading p { font-size: 12px; }
+  .logic-board { flex-direction: column; overflow: visible; }
+  .logic-endpoint { flex: auto; min-height: 110px; gap: 4px; }
+  .logic-source strong { width: 42px; height: 42px; font-size: 24px; box-shadow: 0 0 0 4px #d7f9f0; }
+  .logic-stage { min-height: 132px; flex: auto; gap: 7px; }
+  .logic-stage::before { content: '↓'; right: 50%; top: -22px; transform: translateX(50%); }
+  .logic-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .logic-gate { min-height: 75px; }
+  .logic-logo { min-height: 150px; }
+  .logic-logo img { width: 75px; height: 90px; }
+}
+@media (max-width: 580px) {
+  .logic-page { padding-top: 25px; }
+  .logic-level { font-size: 10px; padding: 7px; }
+  .logic-board { padding: 20px 12px; }
+  .logic-status h2 { font-size: 18px; }
+}

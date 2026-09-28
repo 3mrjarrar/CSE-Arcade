@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createRound } from './questions';
 import SequenceGame from './SequenceGame';
 import ElevatorGame from './ElevatorGame';
+import LogicGame from './LogicGame';
 import HeroCanvas from './HeroCanvas';
 import './styles.css';
 import './theme.css';
@@ -12,6 +13,7 @@ import './hero-canvas.css';
 import './questions-cover.css';
 import './games-grid.css';
 import './elevator.css';
+import './logic.css';
 
 const years = ['البدايات الحلوة', 'الأساس صار أقوى', 'أنظمة وشبكات', 'أنظمة مدمجة ووقت حقيقي', 'هندسة على مستوى أكبر'];
 const levels = ['beginner', 'intermediate', 'advanced'];
@@ -109,9 +111,13 @@ function App() {
             <div className="game-art elevator-cover"><img src="/elevator/cover.jpg" alt="مصعد مفتوح وإشارته بتدلّ على الطابق الخامس" loading="lazy"/></div>
             <div className="game-info"><span className="tag"><i/> ثنائي وعشري</span><h3>المصعد الثنائي</h3><p>المختبر بالطابق الخامس.<br/>حلّ التحويلات واطلع قبل ما يخلص الوقت.</p><div className="game-meta"><span>٥ طوابق</span><span>٢٠ ثانية</span><span>ثنائي ↔ عشري</span></div><span className="play-link">يلا نطلع <Icon/></span></div><span className="card-number">03</span>
           </button>
+          <button className="game-card logic-cover-card" onClick={() => setScreen('logic')}>
+            <div className="game-art logic-cover"><span className="cover-signal">1</span><div className="cover-gates"><span>AND</span><span>NOT</span><span>OR</span></div><img src="/logo.png" alt="" loading="lazy"/></div>
+            <div className="game-info"><span className="tag"><i/> منطق ومسارات</span><h3>بوابات المنطق</h3><p>اختار مسار الإشارة بعناية.<br/>وصل قيمة 1 للشعار وخلّيه يضوي.</p><div className="game-meta"><span>٥ مراحل</span><span>AND / OR / NOT</span><span>بدون مؤقّت</span></div><span className="play-link">شغّل الدائرة <Icon/></span></div><span className="card-number">04</span>
+          </button>
           <div className="coming-soon"><span className="plus-box">+</span><div><strong>وفي ألعاب ثانية بالطريق.</strong><p>لسّه الأركيد بأول الطريق، زيّنا كلنا.</p></div></div>
         </section>
-      </> : screen === 'sequence' ? <SequenceGame onHome={home}/> : screen === 'elevator' ? <ElevatorGame onHome={home}/> : <section className="play-area">
+      </> : screen === 'sequence' ? <SequenceGame onHome={home}/> : screen === 'elevator' ? <ElevatorGame onHome={home}/> : screen === 'logic' ? <LogicGame onHome={home}/> : <section className="play-area">
         <button className="back" onClick={() => screen === 'level' ? setScreen('year') : home()}><span aria-hidden="true">→</span> {screen === 'level' ? 'غيّر السنة' : 'ارجع للألعاب'}</button>
         <div className="play-topline"><span className="eyebrow">لعبة الأسئلة</span><span className="round-badge">{active ? `السنة ${year} / ${levelNames[level]}` : 'جهّز تحدّيك'}</span></div>
 
